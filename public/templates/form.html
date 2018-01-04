@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="form-background" ng-app="KnowYourself" ng-controller="dataController">
+    <form  name="frm ">
+
+
+        <fieldset>
+            <!--<label class="label-group">Age-->
+                <!--<input type="text" name="pname"  placeholder="age" ng-model="addData.Age" required>-->
+                <!--<span ng-show="frm.pname.$touched && frm.pname.$invalid">Age is required</span>-->
+                <!--<span ng-show="frm.pname.$touched && frm.pname.$error.required"></span>-->
+            <!--</label>-->
+
+            <label class="label-group">Age:
+
+                <select ng-model="addData.Age" name="booktype" placeholder="district" ng-options="age for age in age12" required>
+
+                </select>
+
+                <span ng-show="frm.booktype.$touched&&frm.booktype.$error.required">Select Gender</span>
+
+
+            </label>
+
+
+            <label class="label-group">Gender:
+
+                <select ng-model="addData.Gender" name="booktype" placeholder="district" ng-options="gender for gender in genders" required>
+
+                </select>
+
+                <span ng-show="frm.booktype.$touched&&frm.booktype.$error.required">Select Gender</span>
+
+
+            </label>
+
+            <label class="label-group">Leisure time:
+
+                <select ng-model="addData.Leisure" ng-change="Checkit()" name="booktype" placeholder="district" ng-options="hour for hour in hours" required>
+
+                </select>
+
+                <span ng-show="frm.booktype.$touched&&frm.booktype.$error.required">Select Leisure</span>
+
+
+            </label>
+            <label class="label-group">Personal Care:
+
+                <select ng-model="addData.PersonalCare" ng-change=Checkit() name="booktype" placeholder="district" ng-options="hour for hour in hours" required>
+
+                </select>
+
+                <span ng-show="frm.booktype.$touched&&frm.booktype.$error.required">Select Healthcare</span>
+
+
+                 </label>
+            <label class="label-group">Internet:
+
+                <select ng-model="addData.Internet" ng-change=Checkit() name="booktype" placeholder="district" ng-options="hour for hour in hours" required>
+
+                </select>
+
+                <span ng-show="frm.booktype.$touched&&frm.booktype.$error.required">Select Internet</span>
+
+
+            </label>
+
+
+
+            <label class="label-group">Sleep:
+
+                <select ng-model="addData.Sleep" ng-change=Checkit() name="booktype" placeholder="district" ng-options="hour for hour in hours" required>
+
+                </select>
+
+                <span ng-show="frm.booktype.$touched&&frm.booktype.$error.required">Select Sleep</span>
+
+
+            </label>
+            <label class="label-group">Study:
+
+                <select ng-model="addData.Study" ng-change=Checkit() name="booktype" placeholder="district" ng-options="hour for hour in hours" required>
+
+                </select>
+
+                <span ng-show="frm.booktype.$touched&&frm.booktype.$error.required">Select Sleep</span>
+
+
+            </label>
+            <label class="label-group">Professional Hour:
+
+                <select ng-model="addData.ProfessionalHour" ng-change=Checkit() name="booktype" placeholder="district" ng-options="hour for hour in hours" required>
+
+                </select>
+
+                <span ng-show="frm.booktype.$touched&&frm.booktype.$error.required">Select Sleep</span>
+
+
+            </label>
+            <label class="label-group">Sports:
+
+                <select ng-model="addData.Sports" ng-change=Checkit() name="booktype" placeholder="district" ng-options="hour for hour in hours" required>
+
+                </select>
+
+                <span ng-show="frm.booktype.$touched&&frm.booktype.$error.required">Select Sleep</span>
+
+
+            </label>
+            <label class="label-group">Household work:
+
+                <select ng-model="addData.Household" ng-change=Checkit() name="booktype" placeholder="district" ng-options="hour for hour in hours" required>
+
+                </select>
+
+                <span ng-show="frm.booktype.$touched&&frm.booktype.$error.required">Select Sleep</span>
+
+
+            </label>
+            <label class="label-group">Daily Travel:
+
+                <select ng-model="addData.DailyTravel" ng-change=Checkit() name="booktype" placeholder="district" ng-options="hour for hour in hours" required>
+
+                </select>
+
+                <span ng-show="frm.booktype.$touched&&frm.booktype.$error.required">Select Sleep</span>
+
+
+            </label>
+
+
+
+        </fieldset>
+
+        <label ng-if="validData== false "><p>All hours must add up to 24</p></label>
+
+        <button class="submitbtn" ng-disabled="frm.$invalid||frm.$untouched"  ng-if="validData"  ng-click="addVal()" >Save</button >
+        <button class="submitbtn" ng-disabled="frm.$invalid||frm.$untouched" ng-click="updateBooks()"ng-if="paramsbook">Update</button >
+    </form>
+</div>
+
+</body>
+</html>
